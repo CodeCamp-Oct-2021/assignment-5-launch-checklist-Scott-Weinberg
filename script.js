@@ -1,14 +1,14 @@
 // Write your JavaScript code here!
 
-const { formSubmission } = require("./scriptHelper");
-let  helperFuncs = import("./helperFuncs.js");
-let helperFuncs = require("./helperFuncs.js")
+// const { formSubmission, myFetch } = require("./scriptHelper");
+// let  helperFuncs = import("./helperFuncs.js");
+// let helperFuncs = require("./helperFuncs.js")
 window.addEventListener("load", function(event) {
     
-  console.log("show me this")
+ 
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = response.json;
+   let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
        console.log(listedPlanets);
@@ -16,18 +16,22 @@ window.addEventListener("load", function(event) {
        console.log(listedPlanets);
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
        pickPlanet(listedPlanetsResponse);
-
+        console.log(listedPlanetsResponse)
    })
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event){
 
     event.preventDefault()
-    let pilot = document.querySelector("input[name=pilotName]");
-    let copilot = document.querySelector("input[name=copilotName]");
-    let fuelLevel = document.querySelector("input[name=fuelLevel]");
-    let cargoLevel = document.querySelector("input[name=cargoMass]");
+    let pilotInput = document.querySelector("input[name=pilotName]");
+    let pilot = pilotInput.value;
+    let copilotInput = document.querySelector("input[name=copilotName]");
+    let copilot = copilotInput.value;
+    let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
+    let fuelLevel = Number(fuelLevelInput.value);
+    let cargoLevelInput = document.querySelector("input[name=cargoMass]");
+    let cargoLevel = Number(cargoLevelInput.value)
     let list = document.querySelector("faultyItems")
-formSubmission(list, pilot.value, copilot, fuelLevel, cargoLevel)
+formSubmission(list, pilot, copilot, fuelLevel, cargoLevel)
 
    });
 });
