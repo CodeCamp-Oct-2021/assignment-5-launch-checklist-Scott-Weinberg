@@ -2,18 +2,27 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-   // Here is the HTML formatting for our mission target div.
-   /*
+   window.addEventListener("load", function(){
+       
+  const missionTarget = document.getElementById('missionTarget')
+  let destination = pickplanet(planetsReturned);
+
+
+  for (let i =0; i < json.length; i++){
+      destination += `
+  
                 <h2>Mission Destination</h2>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
-                    <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Name: ${json[i].name} </li>
+                    <li>Diameter: ${json[i].diameter} </li>
+                    <li>Star: ${json[i].star}</li>
+                    <li>Distance from Earth: ${json[i].distance} </li>
+                    <li>Number of Moons: ${json[i].moons} </li>
                 </ol>
-                <img src="">
-   */
+                <img src="${json[i].image}">`
+   missionTarget = destination;
+}
+   })
 }
 
 function validateInput(testInput) {
@@ -69,21 +78,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 async function myFetch() {
-    let planetsReturned = response.json;
-
+    let planetsReturned = response.json() ;
+    // window.addEventListener("submit", function() {
     planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response) {
+    console.log(response)
     if(response.status >= 400){
         throw new Error("Bro that didnt work")
     }  
     });
-
+    
     return planetsReturned;
+    // })
 }
 
 function pickPlanet(planets) {
-  let planetsRandom = Math.floor(Math.random()* 6) +1;
+ window.addEventListener("load", function() {
+    let planetsRandom = Math.floor(Math.random()* 6) +1;
   return planets[planetsRandom]
-
+ })
 }
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;

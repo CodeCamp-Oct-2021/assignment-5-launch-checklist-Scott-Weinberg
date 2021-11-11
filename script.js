@@ -1,8 +1,8 @@
 // Write your JavaScript code here!
 
-// const { formSubmission } = require("./scriptHelper");
-// const helperFuncs = import("./helperFuncs.js");
-// const helperFuncs = require("./helperFuncs.js")
+const { formSubmission } = require("./scriptHelper");
+let  helperFuncs = import("./helperFuncs.js");
+let helperFuncs = require("./helperFuncs.js")
 window.addEventListener("load", function(event) {
     
   console.log("show me this")
