@@ -34,8 +34,9 @@ window.addEventListener("load", function(event) {
     let cargoLevelInput = document.querySelector("input[name='cargoMass']");
     let cargoLevel = Number(cargoLevelInput.value);
     let list = document.getElementById("faultyItems");
-
-    formSubmission(list, pilot, copilot, fuelLevel, cargoLevel)
+console.log(copilot);
+console.log(pilot)
+    formSubmission(pilot, copilot, fuelLevel, cargoLevel, list);
 
    })
 
