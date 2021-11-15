@@ -21,11 +21,11 @@ missionTarget.innerHTML = `
 function validateInput(testInput) {
    let numberInput = Number(testInput)
          if(testInput === ""){
-             return "Empty"
+             return "Empty";
          } else if (isNaN(numberInput)){
-             return "Not a Number"
+             return "Not a Number";
          }else if (isNaN(numberInput)=== false){
-             return "Is a Number"
+             return "Is a Number";
          }
          
 }
@@ -47,7 +47,7 @@ let h2 = document.getElementById('launchStatus');
      window.alert("Please enter a valid input type")
  } 
          else {
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready for Launch`
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for Launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for Launch`;  
 
      let launchStatus = document.getElementById("launchStatus");
@@ -56,7 +56,7 @@ let h2 = document.getElementById('launchStatus');
  if (fuelLevel < 10000 && cargoLevel <= 10000){
             list.style.visibility= 'visible';    
             fuelStatus.innerHTML = `Fuel Level too low for launch`;         
-            launchStatus.innerHTML = "Shuttle Not cleared for launch"  ;
+            launchStatus.innerHTML = "Shuttle Not cleared for launch";
             cargoStatus.innerHTML = ` Cargo mass low enought for lift off`;
                
             h2.style.color = "red";
@@ -80,7 +80,8 @@ let h2 = document.getElementById('launchStatus');
              list.style.visibility= 'hidden';
              cargoStatus.innerHTML = `Cargo mass low enough for launch`;
              fuelStatus.innerHTML =`Fuel Level high enough for launch`;
-            
+             pilotStatus.innerHTML = `Pilot Ready`;
+             copilotStatus.innerHTML = `Co-pilot Ready`;
              launchStatus.innerHTML = "Shuttle is Ready for launch";
              h2.style.color = "green"
             }
@@ -97,18 +98,18 @@ async function myFetch() {
     if(response.status >= 400){
         throw new Error("Bro that didnt work")
     }  else{
-        return response.json()
+        return response.json();
     }
     });
     
     return planetsReturned;
     
-}
+};
 
 function pickPlanet(planets) {
     
   return planets[ Math.floor(Math.random()* planets.length)]
-}
+};
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
 module.exports.formSubmission = formSubmission;
