@@ -1,8 +1,10 @@
 // Write your JavaScript code here!
 
+// const { addDestinationInfo } = require("./scriptHelper");
+
 // const { formSubmission, myFetch } = require("./scriptHelper");
-// let  helperFuncs = import("./helperFuncs.js");
-// let helperFuncs = require("./helperFuncs.js")
+//  helperFuncs = import("./helperFuncs.js");
+//  helperFuncs = require("./helperFuncs.js")
 window.addEventListener("load", function(event) {
     
  
@@ -14,10 +16,18 @@ window.addEventListener("load", function(event) {
      
    }).then(function () {
        console.log(listedPlanets);
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-       pickPlanet(listedPlanetsResponse);
-      
-   })
+       // Below this comment call the appropriate helper functions 
+    //    to pick a planet fom the list of planets and add that information
+    //  to your destination.
+       let destination = pickPlanet(listedPlanets);
+
+        addDestinationInfo(document, destination.name, destination.diameter,
+            destination.star, destination.distance, destination.moons,
+            destination.image
+            ); 
+            console.log("print")
+   
+});
 
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event){
