@@ -40,11 +40,11 @@ let h2 = document.getElementById('launchStatus');
 
  if(validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty"||
  validateInput(cargoLevel) === "Empty"){
-     window.alert("These feilds can't be empty")
+     alert("These feilds can't be empty")
  } 
     else if(validateInput(pilot)=== "Is a Number" || validateInput(copilot)=== "Is a Number" || validateInput(fuelLevel) === "Not a Number" ||
     validateInput(cargoLevel) === "Not a Number"){
-     window.alert("Please enter a valid input type")
+     alert("Please enter a valid input type")
  } 
          else {
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for Launch`;
