@@ -56,7 +56,7 @@ console.log(copilot);
  } 
  if (fuelLevel < 10000 && cargoLevel <= 10000){
             list.style.visibility= 'visible';    
-            fuelStatus.innerHTML = `Fuel Level is too low for liftoff!!`;         
+            fuelStatus.innerHTML = `Fuel Level too low for launch`;         
             launchStatus.innerHTML = "Shuttle Not cleared for launch"  ;
             cargoStatus.innerHTML = ` Cargo level is good lift off`;
                
@@ -66,21 +66,21 @@ console.log(copilot);
     else if (cargoLevel > 10000 && fuelLevel >=10000){
          list.style.visibility= 'visible'; 
          fuelStatus.innerHTML = `Fuel Level is Ready for launch`;
-         cargoStatus.innerHTML = `Cargo weight is too heavy for launch`;
+         cargoStatus.innerHTML = `Cargo mass is too heavy for launch`;
          launchStatus.innerHTML = "Shuttle is Not cleared for launch";
          h2.style.color = "red";
         }
         else if (fuelLevel < 10000 && cargoLevel > 10000){
             cargoStatus.innerHTML = `Cargo weight is too heavy for launch`;
-            fuelStatus.innerHTML =`Fuel level is too low`;
+            fuelStatus.innerHTML =`Fuel Level too low for launch`;
             list.style.visibility= 'visible';
             launchStatus.innerHTML = "Shuttle is Not cleared for launch";
             h2.style.color = "red";
         }
              else{
-             cargoStatus.innerHTML = `Cargo weight is ${cargoLevel}kg and is Ready for launch`;
+             cargoStatus.innerHTML = `Cargo mass low enough for launch`;
              fuelStatus.innerHTML =`Fuel Level is ${fuelLevel}L and is Ready for launch`;
-             list.style.visibility= 'visible';
+             list.style.visibility= 'hidden';
              launchStatus.innerHTML = "Shuttle is Ready for launch";
              h2.style.color = "green"
             }
