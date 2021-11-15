@@ -31,7 +31,7 @@ function validateInput(testInput) {
 }
 
 
-function formSubmission( pilot, copilot, fuelLevel, cargoLevel, list) {
+function formSubmission( document, pilot, copilot, fuelLevel, cargoLevel, list) {
 //    const pilotNom =  document.getElementById("pilotName");
 //    const copilotNom =  document.querySelector("input[name = 'copilotName']");
 //    const fuelStatusLevel = document.querySelector("input[name = 'fuelLevel']");
